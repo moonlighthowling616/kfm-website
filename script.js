@@ -5,5 +5,6 @@ window.onload = () => {
 };
 
 document.getElementById("preRegBtn").addEventListener("click", () => {
-    window.open("https://forms.gle/YOUR_GOOGLE_FORM_LINK", "_blank");
+    window.open("https://forms.gle/BQgS6vvXgcRwsnBa9");
+
 });
