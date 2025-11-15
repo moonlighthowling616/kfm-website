@@ -14,7 +14,7 @@ body {
 }
 
 #center-image {
-    width: 800px;
+    width: 500px;
     height: auto;
     margin-bottom: 25px;
     animation: fadeIn 1s ease forwards;
@@ -69,4 +69,5 @@ button:active {
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+
 }
