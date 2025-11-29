@@ -6,5 +6,4 @@ window.onload = () => {
 
 document.getElementById("preRegBtn").addEventListener("click", () => {
     window.open("https://forms.gle/BQgS6vvXgcRwsnBa9");
-
 });

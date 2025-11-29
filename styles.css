@@ -10,7 +10,19 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    overflow: hidden;
+    overflow-y: auto; 
+}
+
+.button-container {
+    display: flex;
+    gap: 15px; 
+    margin-bottom: 25px; 
+    animation: fadeInUp 1s ease forwards; 
+}
+
+.button-link {
+    text-decoration: none;
+    display: inline-block; 
 }
 
 #center-image {
@@ -24,7 +36,7 @@ body {
     border-radius: 0;
 }
 
-button {
+.button-container button { 
     padding: 12px 20px;
     border: 2px solid black;
     background: black;
@@ -34,10 +46,11 @@ button {
     border-radius: 8px;
     transition: 0.25s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    animation: fadeInUp 1s ease forwards;
+    animation: none;
 }
-button:hover,
-button:active {
+
+.button-container button:hover,
+.button-container button:active {
     background: white;
     color: black;
     border: 2px solid black;
@@ -50,9 +63,16 @@ button:active {
         max-width: 95%;
         margin-bottom: 20px;
     }
+    
+    .button-container {
+        flex-direction: column; 
+        gap: 10px;
+        align-items: center;
+    }
 
-    button {
-        width: 80%;
+    .button-container button {
+        width: 80vw; 
+        max-width: 300px; 
         font-size: 16px;
         padding: 12px 0;
     }
@@ -69,5 +89,4 @@ button:active {
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-
 }
