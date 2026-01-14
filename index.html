@@ -1,39 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive scaling for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
     <title>Kagay-an FurMeet (KFM)</title>
 
+    <!-- Website favicon -->
     <link rel="icon" type="image/png" href="images/icon.png">
+
+    <!-- Open Graph image for social media sharing -->
     <meta property="og:image" content="vector-icon.svg">
 
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <img id="center-image" src="images/default.png" >
 
+    <!-- Main logo / banner image -->
+    <img id="center-image" src="images/new default backgroud.png">
+
+    <!-- Main tagline -->
+    <h2>THE FIRST AND ONLY FURRY MEETUP IN CDO!</h2>
+
+    <!-- ================= ANNOUNCEMENT POPUP ================= -->
+    <!-- This popup automatically appears when the page loads -->
+    <div id="announcementPopup" class="popup-overlay">
+        <div class="popup-box">
+            <h2>📢 ANNOUNCEMENT</h2>
+            <p>
+                Kagay-an FurMeet (KFM) 2026 is finally here!<br><br>
+                @ Gaisano City Uptown<br>
+                Jan 25, 1:00 PM - 6:00 PM
+            </p>
+
+            <!-- Button to close the popup -->
+            <button id="closePopup">Got it!</button>
+        </div>
+    </div>
+    <!-- ====================================================== -->
+
+    <!-- Social media buttons -->
     <div class="button-container">
-        <!--
-        <button id="preRegBtn">Pre-Register Today!</button>
-        -->
-        
-        <a href="https://www.facebook.com/kagayanfurmeet" id="socMedBtn" class="button-link">
-            <button>Follow us on Facebook!</button>
+        <a href="https://www.facebook.com/kagayanfurmeet" class="button-link">
+            <button>Follow us on Facebook Page 🐺</button>
+        </a>
+
+        <a href="https://discord.gg/nmNkrumNvT" class="button-link">
+            <button>Our Discord Server 🐾</button>
         </a>
     </div>
 
+    <!-- Code of Conduct button -->
     <div class="button-container">
-        <a href="images/test.jpg" id="ruleBookBtn" class="button-link">
+        <a href="https://docs.google.com/document/d/1L32Nf1glzoDRwNoTBFLNTJn5WfENSwUQMJab2Hxl-fc/edit?usp=sharing" id="ruleBookBtn" class="button-link">
             <button>Code of Conduct</button>
         </a>
     </div>
-    
-    <p>---------</p>
-    
-    <p>&copy; 2025 - 2026 Puting Lobo Studios</p>
 
+    <!-- Divider -->
+    <p>---------</p>
+
+    <!-- Footer -->
+    <p>&copy; 2025 - 2026 by Puting Lobo Studios</p>
+
+    <!-- JavaScript file -->
     <script src="script.js"></script>
+
 </body>
 </html>
-

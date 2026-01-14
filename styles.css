@@ -1,43 +1,56 @@
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* ================= GLOBAL STYLES ================= */
 body {
     margin: 0;
     padding: 0;
     background: #ffffff;
     font-family: 'Poppins', sans-serif;
+
+    /* Center content vertically & horizontally */
     display: flex;
     justify-content: center;
     align-items: center;
+
     height: 100vh;
     flex-direction: column;
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 
-.button-container {
-    display: flex;
-    gap: 15px; 
-    margin-bottom: 25px; 
-    animation: fadeInUp 1s ease forwards; 
+/* Headings */
+h2 {
+    text-align: center;
 }
 
-
-.button-link {
-    text-decoration: none;
-    display: inline-block; 
-}
-
+/* ================= MAIN IMAGE ================= */
 #center-image {
     width: 500px;
     height: auto;
     margin-bottom: 25px;
+
+    /* Fade-in animation */
     animation: fadeIn 1s ease forwards;
-    background: none;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
 }
 
-.button-container button { 
+/* ================= BUTTONS ================= */
+.button-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+
+    /* Slide-up animation */
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Remove underline from links */
+.button-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Button styling */
+.button-container button {
     padding: 12px 20px;
     border: 2px solid black;
     background: black;
@@ -45,49 +58,101 @@ body {
     font-size: 16px;
     cursor: pointer;
     border-radius: 8px;
+
+    /* Smooth hover animation */
     transition: 0.25s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    animation: none;
 }
 
+/* Button hover / active effects */
 .button-container button:hover,
 .button-container button:active {
     background: white;
     color: black;
-    border: 2px solid black;
     transform: translateY(-2px) scale(1.03);
     box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
+/* ================= POPUP ================= */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+
+    /* Hidden by default */
+    display: none;
+
+    /* Center popup */
+    align-items: center;
+    justify-content: center;
+
+    /* Appear above everything */
+    z-index: 9999;
+}
+
+.popup-box {
+    background: #1e1e1e;
+    color: white;
+    padding: 25px;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Popup title spacing */
+.popup-box h2 {
+    margin-bottom: 10px;
+}
+
+/* Popup button */
+.popup-box button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
 @media (max-width: 600px) {
     #center-image {
         max-width: 95%;
         margin-bottom: 20px;
     }
-    
+
     .button-container {
-        flex-direction: column; 
+        flex-direction: column;
         gap: 10px;
         align-items: center;
     }
 
     .button-container button {
-        width: 80vw; 
-        max-width: 300px; 
-        font-size: 16px;
-        padding: 12px 0;
+        width: 80vw;
+        max-width: 300px;
     }
 }
 
+/* ================= ANIMATIONS ================= */
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
