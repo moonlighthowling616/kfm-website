@@ -1,15 +1,27 @@
-// Run code after the page fully loads
-window.addEventListener("load", function () {
+const eventsToggle = document.getElementById("eventsToggle");
+const dropdown = document.querySelector(".dropdown");
+const eventsMenu = document.getElementById("eventsMenu");
 
-    // Get popup elements
-    const popup = document.getElementById("announcementPopup");
-    const closeBtn = document.getElementById("closePopup");
+function setDropdown(open) {
+    if (!dropdown || !eventsToggle || !eventsMenu) return;
+    dropdown.classList.toggle("active", open);
+    eventsToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    eventsMenu.setAttribute("aria-hidden", open ? "false" : "true");
+}
 
-    // Show popup automatically
-    popup.style.display = "flex";
-
-    // Hide popup when the button is clicked
-    closeBtn.addEventListener("click", function () {
-        popup.style.display = "none";
+if (eventsToggle && dropdown) {
+    eventsToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        setDropdown(!dropdown.classList.contains("active"));
     });
-});
+
+    document.addEventListener("click", function (e) {
+        if (!dropdown.contains(e.target)) {
+            setDropdown(false);
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setDropdown(false);
+    });
+}

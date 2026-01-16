@@ -1,77 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Character encoding -->
     <meta charset="UTF-8">
-
-    <!-- Responsive scaling for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Page title -->
     <title>Kagay-an FurMeet (KFM)</title>
 
-    <!-- Website favicon -->
+    <meta name="description" content="Kagay-an FurMeet (KFM) — the first furry meetup in Cagayan de Oro.">
+    <meta property="og:image" content="images/icon.png">
+    
     <link rel="icon" type="image/png" href="images/icon.png">
-
-    <!-- Open Graph image for social media sharing -->
-    <meta property="og:image" content="vector-icon.svg">
-
-    <!-- Main stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Main logo / banner image -->
-    <img id="center-image" src="images/new default backgroud.png">
+    <header class="site-header">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" id="eventsToggle" aria-expanded="false">Attending KFM</a>
+                    <div class="dropdown-menu" id="eventsMenu" aria-hidden="true">
+                        <a href="https://forms.gle/TouwmDawXe7st4Ae7" class="event-item" target="_blank" rel="noopener noreferrer">KFM 2026</a>
+                    </div>
+                </li>
 
-    <!-- Main tagline -->
-    <h2>THE FIRST AND ONLY FURRY MEETUP IN CDO!</h2>
+                <li><a href="https://drive.google.com/drive/folders/1I_UhlJ3BJXNws34uq_As5xthoUe6L4hL?usp=sharing" target="_blank" rel="noopener noreferrer">Archives</a></li>
+                <li><a href="https://docs.google.com/document/d/1L32Nf1glzoDRwNoTBFLNTJn5WfENSwUQMJab2Hxl-fc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Code of Conduct</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- ================= ANNOUNCEMENT POPUP ================= -->
-    <!-- This popup automatically appears when the page loads -->
-    <div id="announcementPopup" class="popup-overlay">
-        <div class="popup-box">
-            <h2>📢 ANNOUNCEMENT</h2>
-            <p>
-                Kagay-an FurMeet (KFM) 2026 is finally here!<br><br>
-                @ Gaisano City Uptown<br>
-                Jan 25, 1:00 PM - 6:00 PM
-            </p>
+    <main>
+        <img id="center-image" src="images/new%20default%20backgroud.png" alt="Kagay-an FurMeet banner" loading="lazy">
 
-            <!-- Button to close the popup -->
-            <button id="closePopup">Okay</button>
+        <h1>THE FIRST AND ONLY FURRY MEETUP IN CDO!</h1>
+
+        <div class="button-container">
+            <a href="https://www.facebook.com/kagayanfurmeet" class="button-link" target="_blank" rel="noopener noreferrer" role="button">Follow us on Facebook 🐺</a>
+            <a href="https://discord.gg/nmNkrumNvT" class="button-link" target="_blank" rel="noopener noreferrer" role="button">Our Discord Server 🐾</a>
         </div>
-    </div>
-    <!-- ====================================================== -->
+    </main>
 
-    <!-- Social media buttons -->
-    <div class="button-container">
-        <a href="https://www.facebook.com/kagayanfurmeet" class="button-link">
-            <button>Follow us on Facebook 🐺</button>
-        </a>
+    <footer>
+        <p>&copy; 2026 Puting Lobo Studios</p>
+    </footer>
 
-        <a href="https://discord.gg/nmNkrumNvT" class="button-link">
-            <button>Our Discord Server 🐾</button>
-        </a>
-    </div>
-
-    <!-- Code of Conduct button -->
-    <div class="button-container">
-        <a href="https://docs.google.com/document/d/1L32Nf1glzoDRwNoTBFLNTJn5WfENSwUQMJab2Hxl-fc/edit?usp=sharing" id="ruleBookBtn" class="button-link">
-            <button>Code of Conduct</button>
-        </a>
-    </div>
-
-    <!-- Divider -->
-    <p>---------</p>
-
-    <!-- Footer -->
-    <p>&copy; 2026 by Puting Lobo Studios</p>
-
-    <!-- JavaScript file -->
     <script src="script.js"></script>
-
 </body>
 </html>
-
-
