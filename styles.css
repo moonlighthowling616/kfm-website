@@ -34,11 +34,12 @@ h1 {
 }
 
 .site-header {
-    position: absolute; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    background: transparent;
 }
 
 .navbar {
@@ -165,9 +166,24 @@ footer {
         padding: 15px;
     }
 
+    /* Ensure page flows naturally on small screens */
+    body {
+        justify-content: flex-start;
+        align-items: stretch;
+        min-height: auto;
+        padding-top: 90px; /* give room for fixed header */
+    }
+
     .nav-links {
-        gap: 15px;
+        gap: 10px;
         font-size: 14px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 8px 12px;
     }
 
     .button-container {
@@ -180,6 +196,23 @@ footer {
         width: 100%;
         max-width: 280px;
         text-align: center;
+    }
+
+    /* Make main image more flexible on small screens */
+    #center-image {
+        max-width: 92%;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Medium-small screens adjustments */
+    #center-image {
+        max-width: 80%;
+    }
+
+    .navbar {
+        margin: 12px;
+        padding: 14px;
     }
 }
 
