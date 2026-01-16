@@ -1,8 +1,9 @@
-const eventsToggle = document.getElementById("eventsToggle");
-const dropdown = document.querySelector(".dropdown");
-const eventsMenu = document.getElementById("eventsMenu");
 const mobileNavigationMenu = document.getElementById('mobile-navigation')
 const mobileNavigationLinks = document.getElementById('mobile-navigation-links')
+
+// There may be two toggles (desktop + mobile) with the same id in the markup.
+// Select all toggles and handle each dropdown independently.
+const eventToggles = document.querySelectorAll('#eventsToggle');
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,27 +37,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    function setDropdown(open) {
-        if (!dropdown || !eventsToggle || !eventsMenu) return;
-        dropdown.classList.toggle("active", open);
-        eventsToggle.setAttribute("aria-expanded", open ? "true" : "false");
-        eventsMenu.setAttribute("aria-hidden", open ? "false" : "true");
+    function setDropdownFor(dropdownEl, open) {
+        if (!dropdownEl) return;
+        const toggle = dropdownEl.querySelector('#eventsToggle');
+        const menu = dropdownEl.querySelector('.dropdown-menu');
+        dropdownEl.classList.toggle('active', open);
+        if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (menu) menu.setAttribute('aria-hidden', open ? 'false' : 'true');
     }
 
-    if (eventsToggle && dropdown) {
-        eventsToggle.addEventListener("click", function (e) {
-            e.preventDefault();
-            setDropdown(!dropdown.classList.contains("active"));
+    if (eventToggles && eventToggles.length) {
+        eventToggles.forEach(toggle => {
+            const dd = toggle.closest('.dropdown');
+            toggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                setDropdownFor(dd, !dd.classList.contains('active'));
+            });
         });
 
-        document.addEventListener("click", function (e) {
-            if (!dropdown.contains(e.target)) {
-                setDropdown(false);
-            }
+        document.addEventListener('click', function (e) {
+            eventToggles.forEach(toggle => {
+                const dd = toggle.closest('.dropdown');
+                if (!dd.contains(e.target)) setDropdownFor(dd, false);
+            });
         });
 
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') setDropdown(false);
+            if (e.key === 'Escape') {
+                eventToggles.forEach(toggle => {
+                    const dd = toggle.closest('.dropdown');
+                    setDropdownFor(dd, false);
+                });
+            }
         });
     }
 })
