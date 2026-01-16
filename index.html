@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,14 @@
 
     <meta name="description" content="The first and only furry meetup in CDO!">
     <meta property="og:image" content="images/icon.png">
-    
+
     <link rel="icon" type="image/png" href="images/icon.png">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
+
 <body>
 
     <header class="site-header">
@@ -18,18 +23,51 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="events.html">Events</a></li>
-                
+
                 <li class="dropdown">
                     <a href="#" id="eventsToggle" aria-expanded="false">Attending KFM</a>
                     <div class="dropdown-menu" id="eventsMenu" aria-hidden="true">
-                        <a href="https://forms.gle/TouwmDawXe7st4Ae7" class="event-item" target="_blank" rel="noopener noreferrer">KFM 2026</a>
+                        <a href="https://forms.gle/TouwmDawXe7st4Ae7" class="event-item" target="_blank"
+                            rel="noopener noreferrer">KFM 2026</a>
                     </div>
                 </li>
 
-                <li><a href="https://drive.google.com/drive/folders/1I_UhlJ3BJXNws34uq_As5xthoUe6L4hL?usp=sharing" target="_blank" rel="noopener noreferrer">Archives</a></li>
-                <li><a href="https://docs.google.com/document/d/1L32Nf1glzoDRwNoTBFLNTJn5WfENSwUQMJab2Hxl-fc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Code of Conduct</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1I_UhlJ3BJXNws34uq_As5xthoUe6L4hL?usp=sharing"
+                        target="_blank" rel="noopener noreferrer">Archives</a></li>
+                <li><a href="https://docs.google.com/document/d/1L32Nf1glzoDRwNoTBFLNTJn5WfENSwUQMJab2Hxl-fc/edit?usp=sharing"
+                        target="_blank" rel="noopener noreferrer">Code of Conduct</a></li>
             </ul>
         </nav>
+
+
+        <!-- mobile navigation -->
+        <div id="mobile-navigation"
+            class="animate__animated animate__bounceInDown animat__slow mobile-navigation-container"
+            style="margin-left: 10px; margin-top: 8px; padding: 12px; border-radius: 12px; width: fit-content; box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;">
+            <!-- menu icon container  -->
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+                <!-- bars -->
+                <div style="width: 35px; height: 5px; background-color: black; border-radius: 12px;"></div>
+                <div style="width: 35px; height: 5px; background-color: black; border-radius: 12px;"></div>
+                <div style="width: 35px; height: 5px; background-color: black; border-radius: 12px;"></div>
+            </div>
+        </div>
+
+        <ul id="mobile-navigation-links" class="animate__animated animate__faster mobile-nav-links hide">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li class="dropdown">
+                <a href="#" id="eventsToggle" aria-expanded="false">Attending KFM</a>
+                <div class="dropdown-menu" id="eventsMenu" aria-hidden="true">
+                    <a href="https://forms.gle/TouwmDawXe7st4Ae7" class="event-item" target="_blank"
+                        rel="noopener noreferrer">KFM 2026</a>
+                </div>
+            </li>
+            <li><a href="https://drive.google.com/drive/folders/1I_UhlJ3BJXNws34uq_As5xthoUe6L4hL?usp=sharing"
+                    target="_blank" rel="noopener noreferrer">Archives</a></li>
+            <li><a href="https://docs.google.com/document/d/1L32Nf1glzoDRwNoTBFLNTJn5WfENSwUQMJab2Hxl-fc/edit?usp=sharing"
+                    target="_blank" rel="noopener noreferrer">Code of Conduct</a></li>
+        </ul>
     </header>
 
     <main>
@@ -38,8 +76,10 @@
         <h1>THE FIRST AND ONLY FURRY MEETUP IN CDO!</h1>
 
         <div class="button-container">
-            <a href="https://www.facebook.com/kagayanfurmeet" class="button-link" target="_blank" rel="noopener noreferrer" role="button">Follow us on Facebook 🐺</a>
-            <a href="https://discord.gg/nmNkrumNvT" class="button-link" target="_blank" rel="noopener noreferrer" role="button">Our Discord Server 🐾</a>
+            <a href="https://www.facebook.com/kagayanfurmeet" class="button-link" target="_blank"
+                rel="noopener noreferrer" role="button">Follow us on Facebook 🐺</a>
+            <a href="https://discord.gg/nmNkrumNvT" class="button-link" target="_blank" rel="noopener noreferrer"
+                role="button">Our Discord Server 🐾</a>
         </div>
     </main>
 
@@ -49,4 +89,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

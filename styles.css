@@ -4,7 +4,7 @@
     --primary-black: #000000;
     --primary-white: #ffffff;
     --gray-hover: #f2f2f2;
-    --shadow-light: 0 4px 8px rgba(0,0,0,0.15);
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.15);
     --shadow-heavy: 0 8px 20px rgba(0, 0, 0, 0.15);
     --transition-speed: 0.25s;
 }
@@ -34,7 +34,7 @@ h1 {
 }
 
 .site-header {
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -48,6 +48,7 @@ h1 {
     border-radius: 12px;
     padding: 15px 30px;
     box-shadow: var(--shadow-heavy);
+    display: block;
 }
 
 .nav-links {
@@ -59,7 +60,36 @@ h1 {
     padding: 0;
 }
 
-.nav-links a {
+.mobile-nav-links {
+    margin-left: 8px;
+    border-radius: 12px;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    width: fit-content;
+    padding: 12px;
+    list-style: none;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.mobile-nav-links.active {
+    display: flex;
+    /* animation: mobile-nav-show .4s ease-in; */
+}
+
+/* 
+@keyframes mobile-nav-show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+} */
+
+
+li a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
@@ -148,7 +178,7 @@ main {
     background: var(--primary-white);
     color: var(--primary-black);
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     outline: none;
 }
 
@@ -159,10 +189,20 @@ footer {
     color: #666;
 }
 
+
+.mobile-navigation-container {
+    display: none;
+}
+
 @media (max-width: 600px) {
     .navbar {
-        margin: 10px;
-        padding: 15px;
+        /* margin: 10px; */
+        /* padding: 15px; */
+        display: none;
+    }
+
+    .mobile-navigation-container {
+        display: flex;
     }
 
     .nav-links {
@@ -184,13 +224,27 @@ footer {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .event-container {
@@ -244,6 +298,7 @@ footer {
     .event-card {
         flex-direction: column;
     }
+
     .event-image {
         width: 100%;
         height: 200px;
