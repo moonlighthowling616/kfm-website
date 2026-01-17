@@ -1,5 +1,6 @@
 const mobileNavigationMenu = document.getElementById('mobile-navigation')
 const mobileNavigationLinks = document.getElementById('mobile-navigation-links')
+const closeMobileNavBtn = document.getElementById('close-mobile-nav')
 
 // There may be two toggles (desktop + mobile) with the same id in the markup.
 // Select all toggles and handle each dropdown independently.
@@ -8,31 +9,37 @@ const eventToggles = document.querySelectorAll('#eventsToggle');
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    closeMobileNavBtn.addEventListener('click', () => {
+        mobileNavigationLinks.classList.remove('active')
+    })
+
     mobileNavigationMenu.addEventListener('click', () => {
         // mobileNavigationLinks.classList.toggle('active')
 
         if (mobileNavigationLinks.classList.contains('active')) {
             hide()
+            mobileNavigationLinks.classList.remove('active')
         } else {
+            mobileNavigationLinks.classList.add('active')
             show();
         }
 
     })
 
     function show() {
-        mobileNavigationLinks.classList.add('active')
-        mobileNavigationLinks.classList.remove('animate__slideOutLeft')
-        mobileNavigationLinks.classList.add('animate__slideInLeft')
+        // mobileNavigationLinks.classList.add('active')
+        // mobileNavigationLinks.classList.remove('animate__slideOutLeft')
+        // mobileNavigationLinks.classList.add('animate__slideInLeft')
     }
 
     function hide() {
-        mobileNavigationLinks.classList.remove('animate__slideInLeft')
-        mobileNavigationLinks.classList.add('animate__slideOutLeft')
+        // mobileNavigationLinks.classList.remove('animate__slideInLeft')
+        // mobileNavigationLinks.classList.add('animate__slideOutLeft')
 
-        mobileNavigationLinks.addEventListener('animationend', () => {
-            mobileNavigationLinks.classList.remove('active')
+        // mobileNavigationLinks.addEventListener('animationend', () => {
+        //     mobileNavigationLinks.classList.remove('active')
 
-        }, { once: true })
+        // }, { once: true })
 
     }
 
